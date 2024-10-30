@@ -222,11 +222,6 @@ internal sealed class IntelCpu : GenericCpu
                             tjMax = GetTjMaxFromMsr();
                             break;
 
-                        case 0xC6: // Intel Core Ultra 7 200 Series ArrowLake
-                            _microArchitecture = MicroArchitecture.ArrowLake;
-                            tjMax = GetTjMaxFromMsr();
-                            break;
-
                         default:
                             _microArchitecture = MicroArchitecture.Unknown;
                             tjMax = Floats(100);
@@ -273,7 +268,6 @@ internal sealed class IntelCpu : GenericCpu
                 break;
             case MicroArchitecture.Airmont:
             case MicroArchitecture.AlderLake:
-            case MicroArchitecture.ArrowLake:
             case MicroArchitecture.Broadwell:
             case MicroArchitecture.CannonLake:
             case MicroArchitecture.CometLake:
@@ -388,7 +382,6 @@ internal sealed class IntelCpu : GenericCpu
 
         if (_microArchitecture is MicroArchitecture.Airmont or
             MicroArchitecture.AlderLake or
-            MicroArchitecture.ArrowLake or
             MicroArchitecture.Broadwell or
             MicroArchitecture.CannonLake or
             MicroArchitecture.CometLake or
@@ -591,7 +584,6 @@ internal sealed class IntelCpu : GenericCpu
                             break;
                         case MicroArchitecture.Airmont:
                         case MicroArchitecture.AlderLake:
-                        case MicroArchitecture.ArrowLake:
                         case MicroArchitecture.Broadwell:
                         case MicroArchitecture.CannonLake:
                         case MicroArchitecture.CometLake:
